@@ -2,18 +2,16 @@ package org.kodluyoruz;
 
 public class Main
 {
-
     // TODO Bu sınıftaki kodları değiştirmeyin.
     // Öncelikle diğer sınıflarda belirtilen kodları yazın.
     // Daha sonra bu sınıftaki kodlara konulan yorum satırlarını kaldırın ve main metodunu çalıştırın.
 
     public static void main(String[] args)
     {
-        // testComputer1();
-        // testComputer2();
+         testComputer1();
+         testComputer2();
     }
 
-    /*
     private static void testComputer1()
     {
         Computer computer = new Computer();
@@ -59,6 +57,7 @@ public class Main
         computer.setGpu(gpu);
         computer.setSsd(ssd);
 
+
         final double totalPrice = computer.getTotalPrice();
         final double estimatedTotalPrice = 8897.67;
         if (estimatedTotalPrice != totalPrice)
@@ -72,6 +71,7 @@ public class Main
         {
             throw new RuntimeException(String.format("Güç tüketimi hesaplama metodunuz yanlış! Beklenen: %d Çıkan: %d", estimatedTotalPower, totalPower));
         }
+        System.out.println( "1.comp :" + totalPrice + " ** " + "Guc: " + totalPower);
     }
 
     private static void testComputer2()
@@ -132,7 +132,9 @@ public class Main
         {
             throw new RuntimeException(String.format("Güç tüketimi hesaplama metodunuz yanlış! Beklenen: %d Çıkan: %d", estimatedTotalPower, totalPower));
         }
+
+        System.out.println( "2.comp :" + totalPrice + " - Guc " + totalPower );
     }
-    */
+
 
 }
