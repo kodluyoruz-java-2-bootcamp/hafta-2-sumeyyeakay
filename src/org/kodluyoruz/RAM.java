@@ -59,6 +59,12 @@ public class RAM extends Hardware
 
     @Override
     public int getPower() {
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+            System.out.println("RAM gucu 1 ile 150 arasında olmalidir.");
+        }
         return power;
     }
 

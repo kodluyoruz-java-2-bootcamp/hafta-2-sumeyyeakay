@@ -47,7 +47,13 @@ public class SSD extends Hardware
 
     @Override
     public int getPower() {
-      return power;
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+            System.out.println("SSD gucu 1 ile 150 arasında olmalidir.");
+        }
+        return power;
     }
     /*
      * Eğer SSD'nin hafızası 750 GB'tan fazlaysa, her 250 GB için fiyatı 275 TL artar.
