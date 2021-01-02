@@ -10,8 +10,68 @@ package org.kodluyoruz;
  *
  * TODO Bu 2 özellik ve bunların metotları için gereken kodları bu sınıfın içine yazın
  */
-public class GPU
+public class GPU extends Hardware
 {
+    protected  int memory;
+    protected  int bits;
+
+    public GPU(String brand, double price, int power) {
+        super(brand, price, power);
+    }
+    public GPU() {
+    }
+
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public int getBits() {
+        return bits;
+    }
+
+    public void setBits(int bits) {
+        this.bits = bits;
+    }
+
+    @Override
+    public String getBrand() {
+        return brand;
+    }
+
+    @Override
+    public double getPrice() {
+        if (memory > 8) {
+            for (int i = 8; i < memory ; i+=2) {
+                if (i % 2 == 0){
+                    price+=250;
+                }
+            }
+        }//2208,87,
+        if (bits > 128) {
+            for (int i = 128; i < bits ; i+=64) {
+                if (i % 64 == 0){
+                    price+=400;
+                }
+            }
+        }
+        return price;
+    }
+
+    @Override
+    public int getPower() {
+        if (power >= 1 && power <= 150) {
+            this.power = power;
+        }
+        else {
+            System.out.println("GPU'yu gucu 1 ile 150 arasında olmalidir.");
+        }
+        return power;
+    }
 
     /*
      * Eğer ekran kartının hafızası 8 GB'tan fazlaysa, her 2 GB için fiyatı 250 TL artar.
